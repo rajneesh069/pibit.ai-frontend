@@ -44,7 +44,12 @@ export default function Landing() {
         style={{ width: 200 }}
         sx={{ sm: { display: "none" }, md: { display: "block" } }}
       />
-      <Box position={"relative"} width={"800px"} height={550} margin={0}>
+      <Box
+        position={"relative"}
+        width={{ xs: "200px", md: "800px" }}
+        height={{ height: "120px", md: 550 }}
+        margin={0}
+      >
         <img
           src="/images/banner-image.png"
           alt="banner image"
