@@ -13,12 +13,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { styled, Typography } from "@mui/material";
+import { ArrowRight } from "@mui/icons-material";
 
 interface Props {
   window?: () => Window;
 }
 
-const FillButton = styled(Button)(() => ({
+export const FillButton = styled(Button)(() => ({
   position: "relative",
   overflow: "hidden",
   color: "#808080",
@@ -101,7 +102,7 @@ export default function TopBar(props: Props) {
         component="nav"
         color="inherit"
         position="sticky"
-        style={{ top: 0, width: "100%" }}
+        style={{ top: 0, minWidth: "100%" }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <IconButton
@@ -151,7 +152,10 @@ export default function TopBar(props: Props) {
             ))}
           </Box>
           <Box>
-            <FillButton color="inherit">Book A Demo</FillButton>
+            <FillButton color="inherit">
+              Book A Demo
+              <ArrowRight />
+            </FillButton>
           </Box>
         </Toolbar>
       </AppBar>
