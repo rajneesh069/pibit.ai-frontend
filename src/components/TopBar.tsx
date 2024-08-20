@@ -97,7 +97,12 @@ export default function TopBar(props: Props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" color="inherit">
+      <AppBar
+        component="nav"
+        color="inherit"
+        position="sticky"
+        style={{ top: 0, width: "100%" }}
+      >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <IconButton
             color="inherit"
@@ -121,7 +126,10 @@ export default function TopBar(props: Props) {
             {navItems.map((item) => (
               <Button key={item} sx={{ color: "inherit", mx: 0.5 }}>
                 <Typography
-                  variant="h6"
+                  textTransform={"none"}
+                  fontWeight={600}
+                  fontSize={18}
+                  fontFamily={"cursive"}
                   onMouseOver={() => {
                     setColor((prevColors) => ({
                       ...prevColors,
