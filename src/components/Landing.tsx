@@ -1,8 +1,9 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import { FillButton } from "./TopBar";
 import { ArrowRight } from "@mui/icons-material";
 import YCombinatorIcon from "../icons/YCombinatorIcon";
 import CustomCard from "./CustomCard";
+import WhoWeWorkWith from "./WhoWeWorkWith";
 
 export default function Landing() {
   return (
@@ -11,7 +12,9 @@ export default function Landing() {
       flexDirection={"column"}
       gap={2}
       alignItems={"center"}
+      marginTop={"64px"}
     >
+      
       {/* Banner */}
       <Box
         display="flex"
@@ -89,7 +92,7 @@ export default function Landing() {
       </Box>
 
       {/* Feature Cards */}
-      <Box display={"flex"} gap={2} flexDirection={{ xs: "column", md: "row" }}>
+      <Box display={"flex"} gap={1} flexDirection={{ xs: "column", md: "row" }}>
         <CustomCard
           src="/images/cost-saving.svg"
           heading="100%"
@@ -106,8 +109,9 @@ export default function Landing() {
           content="Reduced Loss Ratio"
         />
       </Box>
-
-      
+      <Divider />
+      {/* Who We Work With */}
+      <WhoWeWorkWith />
     </Box>
   );
 }

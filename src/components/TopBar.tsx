@@ -101,10 +101,21 @@ export default function TopBar(props: Props) {
       <AppBar
         component="nav"
         color="inherit"
-        position="sticky"
-        style={{ top: 0, minWidth: "100%" }}
+        style={{
+          top: 0,
+          minWidth: "100%",
+          zIndex: 10,
+          backgroundColor: "rgba(18, 18, 18, 0.95)",
+          backdropFilter: "blur(10px)",
+        }}
       >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            position: "sticky",
+          }}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"

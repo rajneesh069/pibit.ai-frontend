@@ -16,8 +16,14 @@ export default function CustomCard({ src, alt, heading, content }: CardProps) {
         minWidth: 275,
         maxWidth: 300,
         minHeight: 180,
-        marginBottom: 2,
+        marginBottom: { xs: 0, md: 2 },
         padding: 1.5,
+        background: `
+          linear-gradient(to bottom, #242424, #000), 
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 70%)
+        `,
+        backgroundBlendMode: "overlay",
+        color: "white",
       }}
     >
       <CardContent
