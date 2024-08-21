@@ -9,9 +9,10 @@ export interface ImageProps {
 
 const images: ImageProps[] = [
   { src: "/images/slide1.png", alt: "tokio-marine" },
-  { src: "/images/slide2.png", alt: "tokio-marine" },
-  { src: "/images/slide3.png", alt: "tokio-marine" },
-  { src: "/images/slide4.svg", alt: "tokio-marine" },
+  { src: "/images/slide2.png", alt: "midwest" },
+  { src: "/images/slide3.png", alt: "shepherd" },
+  { src: "/images/slide4.svg", alt: "medi-assist" },
+  { src: "/images/Method_WorkerComm.png", alt: "method-worker" },
 ];
 
 const Carousel = () => {

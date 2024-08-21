@@ -1,81 +1,46 @@
-import { Box, Button, Divider, Typography } from "@mui/material";
-import { FillButton } from "./TopBar";
-import { ArrowRight } from "@mui/icons-material";
+import { Box, Divider, Typography } from "@mui/material";
 import YCombinatorIcon from "../icons/YCombinatorIcon";
 import CustomCard from "./CustomCard";
 import WhoWeWorkWith from "./WhoWeWorkWith";
+import TextBanner from "./TextBanner";
+import Banner from "./Banner";
+import {
+  HeroBannerContent,
+  LossInefficienciesContent1,
+  LossInefficienciesContent2,
+} from "../data/content";
+import { useEffect, useState } from "react";
 
 export default function Landing() {
+  const [order, setOrder] = useState(window.innerWidth < 1024 ? 0 : 1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setOrder(window.innerWidth < 1024 ? 0 : 1);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Box
       display={"flex"}
       flexDirection={"column"}
-      gap={2}
+      gap={3}
       alignItems={"center"}
       marginTop={"64px"}
     >
-      
-      {/* Banner */}
-      <Box
-        display="flex"
-        flexDirection={{ xs: "column", md: "row" }}
-        justifyContent={"space-around"}
-        alignContent={"center"}
-        alignItems={"center"}
-        marginTop={2}
-      >
-        <Box
-          flexBasis={"500px"}
-          alignSelf={"center"}
-          paddingLeft={4}
-          display={"flex"}
-          flexDirection={"column"}
-          gap={2}
-        >
-          <Typography variant="h3" textAlign={"center"}>
-            Faster,
-            <br />
-            Accurate Loss Run Analysis
-          </Typography>
-          <Typography variant="subtitle1" textAlign={"center"}>
-            Streamline your underwriting process: convert unstructured
-            submission documents like ACORD and loss runs into actionable
-            insights within 2 hours!
-          </Typography>
-          <Box display={"flex"} justifyContent={"center"} gap={2}>
-            <FillButton color="inherit">
-              Book A Demo
-              <ArrowRight />
-            </FillButton>
-            <Button color="inherit" variant="outlined">
-              Contact Us
-            </Button>
-          </Box>
-        </Box>
-        <Box
-          style={{ width: 200 }}
-          sx={{ sm: { display: "none" }, md: { display: "block" } }}
-        />
-        <Box
-          position={"relative"}
-          width={{ xs: "300px", md: "800px" }}
-          height={{ height: "250px", md: 550 }}
-          margin={0}
-        >
-          <img
-            src="/images/banner-image.png"
-            alt="banner image"
-            width={"100%"}
-            style={{
-              display: "block",
-              position: "absolute",
-              right: 0,
-              top: "0%",
-              height: "100%",
-            }}
-          />
-        </Box>
-      </Box>
+      {/* Hero Banner */}
+      <Banner
+        bookADemo={true}
+        contactUs={true}
+        title={HeroBannerContent.title}
+        subtitle={HeroBannerContent.subtitle}
+        imageURL="/images/banner-image.png"
+      />
 
       {/* Backed By Y combinator */}
       <Box>
@@ -110,8 +75,49 @@ export default function Landing() {
         />
       </Box>
       <Divider />
+
       {/* Who We Work With */}
       <WhoWeWorkWith />
+      <Divider />
+
+      {/* Text Banner */}
+      <Box>
+        <TextBanner
+          top={4}
+          order={1}
+          heading="Transforming Loss Run Into Actionable Insights"
+          body="Making Commercial Underwriting Efficient"
+        />
+      </Box>
+
+      {/* Banner 1 */}
+      <Box>
+        <Banner
+          bookADemo={true}
+          contactUs={false}
+          title={LossInefficienciesContent1.title}
+          subtitle={LossInefficienciesContent1.subtitle}
+          imageURL="/images/underwriting-inefficiences.png"
+          // imageHeight={}
+          imageWidth={"65%"}
+          gap={150}
+          upperSubTitle="Streamlining Loss Run Extraction"
+        />
+      </Box>
+      {/* Banner 2 */}
+      <Box>
+        <Banner
+          bookADemo={true}
+          contactUs={false}
+          title={LossInefficienciesContent2.title}
+          subtitle={LossInefficienciesContent2.subtitle}
+          imageURL="/images/Get-Quick-Loss-Run-Insights.png"
+          imageWidth={"65%"}
+          gap={150}
+          order={order}
+          upperSubTitle="Loss Run Analytics"
+        />
+      </Box>
     </Box>
   );
 }

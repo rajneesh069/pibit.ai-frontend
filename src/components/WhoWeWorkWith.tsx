@@ -1,17 +1,15 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Carousel from "./Carousel";
+import TextBanner from "./TextBanner";
 
 function WhoWeWorkWith() {
   return (
     <Box display={"flex"} flexDirection={"column"} gap={2}>
-      <Box display={"flex"} flexDirection={"column"} gap={1}>
-        <Typography variant="h2" textAlign={"center"}>
-          Who We Work With
-        </Typography>
-        <Typography textAlign={"center"} variant="h6">
-          Trusted by leading Carriers & MGAs
-        </Typography>
-      </Box>
+      <TextBanner
+        heading="Who We Work With"
+        body="Trusted by leading Carriers & MGAs"
+        top={0}
+      />
       <Box>
         <Carousel />
       </Box>
