@@ -1,51 +1,85 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Box } from "@mui/material";
 
-const images = [
-  "/images/slide1.png",
-  "/images/slide2.png",
-  "/images/slide3.png",
-  "/images/slide4.svg",
+export interface ImageProps {
+  src: string;
+  alt: string;
+}
+
+const images: ImageProps[] = [
+  { src: "/images/slide1.png", alt: "tokio-marine" },
+  { src: "/images/slide2.png", alt: "tokio-marine" },
+  { src: "/images/slide3.png", alt: "tokio-marine" },
+  { src: "/images/slide4.svg", alt: "tokio-marine" },
 ];
 
 const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [x, setX] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 1500);
-
-    return () => clearInterval(interval);
-  }, []);
+    const intervalID = setInterval(() => {
+      if (!isHovered) {
+        setX((x) => (x - 2) % (images.length * 320));
+      }
+    }, 30);
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, [isHovered]);
 
   return (
     <Box
-      sx={{
-        position: "relative",
-        width: "100%",
-        height: "400px",
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "center",
+      height={150}
+      overflow="hidden"
+      width={"90vw"}
+      borderRadius={"20px"}
+      display={"flex"}
+      padding={3}
+      style={{
+        boxShadow: "0px 4px 15px rgba(255, 255, 255, 0.1)",
+        background: "linear-gradient(145deg, #2c2c2c, #181818)",
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {images.map((image, index) => (
-        <Box
-          key={index}
-          component="img"
-          src={image}
-          sx={{
-            display: index === currentIndex ? "block" : "none",
-            width: "50px",
-            height: "50px",
-            objectFit: "cover",
-            transition: "opacity 1s ease-in-out",
-          }}
-        />
-      ))}
+      <Box
+        display={"flex"}
+        flexDirection={"row"}
+        style={{ position: "relative", left: `${x}px` }}
+      >
+        {images.concat(images).map(({ src, alt }, index) => (
+          <motion.div
+            key={index}
+            onMouseOver={() => stop()}
+            style={{
+              height: 100,
+              width: 300,
+              borderRadius: "16px",
+              overflow: "hidden",
+              marginRight: "20px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+              backgroundColor: "#333",
+              position: "relative",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                width: "40%",
+                height: "20%",
+                background:
+                  "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%)",
+                borderTopRightRadius: "16px",
+              }}
+            />
+            <img width={"100%"} height={"100%"} alt={alt} src={src} />
+          </motion.div>
+        ))}
+      </Box>
     </Box>
   );
 };
