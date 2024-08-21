@@ -31,14 +31,14 @@ export default function CustomCard({ src, alt, heading, content }: CardProps) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          gap: 3,
+          gap: 1,
         }}
       >
         <Box>
           <img
             src={src}
             alt={alt}
-            width={130}
+            width={80}
             height={60}
             style={{ display: "block" }}
           />
