@@ -37,8 +37,7 @@ export default function Banner({
       alignContent={"center"}
       alignItems={"center"}
       marginTop={2}
-      paddingX={order === 1 ? 8 : 0}
-      // maxWidth={{ sm: "80vw" }}
+      // paddingX={order === 1 ? 8 : 0}
     >
       {order === 0 ? (
         <BannerText
@@ -90,7 +89,7 @@ function BannerText({
 }: BannerProps) {
   return (
     <Box
-      flexBasis={{ xs: "350px", md: "500px" }}
+      flexBasis={{ xs: "350px", md: "400px" }}
       alignSelf={"center"}
       display={"flex"}
       flexDirection={"column"}
@@ -149,7 +148,7 @@ function BannerImage({
       {imageURL && (
         <Box
           position={"relative"}
-          width={{ xs: "300px", md: "800px" }}
+          width={{ xs: "300px", md: "400px", lg: "800px" }}
           height={{ height: "200px", md: 550 }}
           marginRight={{ md: 3 }}
           display={"flex"}

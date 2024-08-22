@@ -32,8 +32,8 @@ export default function Landing() {
       flexDirection={"column"}
       gap={3}
       alignItems={"center"}
+      border={"2px solid white"}
       justifyContent={"center"}
-      padding={"auto"}
       marginTop={"64px"}
     >
       {/* Hero Banner */}
@@ -123,7 +123,7 @@ export default function Landing() {
         />
       </Box>
 
-      {/* Data Extraction Process Text Banner */}
+      {/* Data Extraction Process Banner */}
       <Box
         display={"flex"}
         flexDirection={"column"}
