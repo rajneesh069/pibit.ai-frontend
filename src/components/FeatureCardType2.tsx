@@ -5,6 +5,7 @@ export interface FeatureCardType2Props {
   alt: string;
   heading: string;
   body: string;
+  width?: number | string;
 }
 
 export default function FeatureCardType2({
@@ -12,6 +13,7 @@ export default function FeatureCardType2({
   alt,
   heading,
   body,
+  width = "100%",
 }: FeatureCardType2Props) {
   return (
     <>
@@ -28,7 +30,7 @@ export default function FeatureCardType2({
         >
           {/* Image Component */}
           <Box>
-            <img src={src} alt={alt} />
+            <img src={src} alt={alt} width={width} />
           </Box>
 
           {/* Heading */}
@@ -37,8 +39,16 @@ export default function FeatureCardType2({
           </Box>
 
           {/* Body */}
-          <Box>
-            <Typography variant="subtitle1">{body}</Typography>
+          <Box
+            bgcolor={"#2E2E2E"}
+            borderRadius={"16px"}
+            display={"flex"}
+            justifyContent={"center"}
+            padding={1}
+          >
+            <Typography variant="subtitle1" textAlign={"center"}>
+              {body}
+            </Typography>
           </Box>
         </CardContent>
       </Card>

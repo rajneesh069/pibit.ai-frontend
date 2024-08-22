@@ -62,25 +62,35 @@ export const WhatMakesUsUniqueContent: FeatureCardType2Props[] = [
   {
     src: "/images/accuracy.svg",
     alt: "accuracy",
+    width: 100,
     heading: "99.9% Accuracy within 2 hrs",
     body: "Commercial insurance specific AI models along with expert review delivers 100% accurate data within 2hrs",
   },
   {
-    src: "/images/accuracy.svg",
+    src: "/images/submission-analytics.svg",
     alt: "Loss run analytics",
+    width: 100,
     heading: "Loss run analytics",
     body: "Quick insights helping underwriters to evaluate risk accurately. Helping Insurers to make informed decisions!",
   },
   {
-    src: "/images/accuracy.svg",
+    src: "/images/template-agnostic.svg",
     alt: "Support any format",
+    width: 100,
     heading: "Support any format",
     body: "Understands any carrier, MGA or other loss runs formats across line of business",
   },
   {
-    src: "/images/accuracy.svg",
+    src: "/images/implementation.png",
     alt: "Implement in 2 weeks!",
+    width: 100,
     heading: "Implement in 2 weeks!",
     body: "Flexible document ingestion techniques makes it easy to do rapid deployments with current workflows quickly",
   },
 ];
+
+export const technology: ContentProps = {
+  title: "Our Technology",
+  subtitle:
+    "Our cutting-edge approach integrates Artificial Intelligence, Machine Learning, Computer Vision, NLP, and LLMs, providing unmatched precision in extracting data from complex submissions, propelling Commercial Insurance into a new era of efficiency.",
+};

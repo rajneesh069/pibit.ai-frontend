@@ -7,6 +7,7 @@ import {
   HeroBannerContent,
   LossInefficienciesContent1,
   LossInefficienciesContent2,
+  technology,
   WhatMakesUsUniqueContent,
 } from "../data/content";
 import { useEffect, useState } from "react";
@@ -151,7 +152,6 @@ export default function Landing() {
         justifyContent={"center"}
         alignItems={"center"}
         alignContent={"center"}
-        // border={"2px solid red"}
       >
         <TextBanner
           order={1}
@@ -160,23 +160,38 @@ export default function Landing() {
           body="Our Features"
         />
         <Box
+          padding={2}
           display={{ xs: "flex", md: "grid" }}
           flexDirection={"column"}
           gap={2}
           sx={{ gridTemplateRows: "1fr 1fr", gridTemplateColumns: "1fr 1fr" }}
         >
           {WhatMakesUsUniqueContent.map((el) => (
-            <Box margin={"1%"}>
+            <Box>
               <FeatureCardType2
                 key={el.alt}
                 alt={el.alt}
                 body={el.body}
                 heading={el.heading}
                 src={el.src}
+                width={el.width}
               />
             </Box>
           ))}
         </Box>
+      </Box>
+
+      {/* Our Technology */}
+      <Box marginTop={1}>
+        <Banner
+          imageURL="/images/technology.png"
+          bookADemo={false}
+          learnMore={true}
+          contactUs={false}
+          subtitle={technology.subtitle}
+          title={technology.title}
+          upperSubTitle="AI-powered, 100% Accuracy!"
+        />
       </Box>
     </Box>
   );

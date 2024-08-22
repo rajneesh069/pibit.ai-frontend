@@ -164,6 +164,7 @@ function BannerImage({
               position: "absolute",
               top: "0%",
               height: imageHeight,
+              borderRadius: "16px",
             }}
           />
         </Box>
