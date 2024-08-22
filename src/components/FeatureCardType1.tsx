@@ -9,7 +9,7 @@ interface CardProps {
   content: string;
 }
 
-export default function CustomCard({ src, alt, heading, content }: CardProps) {
+export default function FeatureCard1({ src, alt, heading, content }: CardProps) {
   return (
     <Card
       sx={{

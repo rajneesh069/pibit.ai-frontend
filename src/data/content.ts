@@ -21,3 +21,37 @@ export const LossInefficienciesContent2: ContentProps = {
   subtitle:
     "Uncover key information from loss runs with our insights report. Spot key trends and patterns and analyse risk accurately.",
 };
+
+export const Ingestion: ContentProps = {
+  title: "Ingestion",
+  subtitle:
+    "Data can be ingested via API, SFTP, Email or our UI in multiple formats like excel, pdf, jpg, word and tiff",
+};
+
+export const Extraction: ContentProps = {
+  title: "Extraction",
+  subtitle:
+    "Our AI model does the document indexing and data extraction from the loss run documents",
+};
+
+export const DataVerification: ContentProps = {
+  title: "Data Verification",
+  subtitle:
+    "Automated quality checks runs on the data along with expert review, makes sure data is accurate",
+};
+
+export const DataEncrichment: ContentProps = {
+  title: "Data Enrichment",
+  subtitle:
+    "Extracting information from relevant third party sources as per the line of business, providing 360 degree view of the customer.",
+};
+export const Analytics: ContentProps = {
+  title: "Analytics",
+  subtitle:
+    "Generating visual reports that summarizes the key trends in the loss run files",
+};
+export const Delivery: ContentProps = {
+  title: "Delivery",
+  subtitle:
+    "Sending this extracted data along with analytics to the carriers either via APIs, Excels, SFTP, Email or any other way as per requirement.",
+};

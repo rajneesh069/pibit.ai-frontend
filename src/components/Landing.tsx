@@ -1,6 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
 import YCombinatorIcon from "../icons/YCombinatorIcon";
-import CustomCard from "./CustomCard";
 import WhoWeWorkWith from "./WhoWeWorkWith";
 import TextBanner from "./TextBanner";
 import Banner from "./Banner";
@@ -10,6 +9,8 @@ import {
   LossInefficienciesContent2,
 } from "../data/content";
 import { useEffect, useState } from "react";
+import FeatureCard1 from "./FeatureCardType1.tsx";
+import HowItWorks from "./HowItWorks.tsx";
 
 export default function Landing() {
   const [order, setOrder] = useState(window.innerWidth < 1024 ? 0 : 1);
@@ -58,17 +59,17 @@ export default function Landing() {
 
       {/* Feature Cards */}
       <Box display={"flex"} gap={1} flexDirection={{ xs: "column", md: "row" }}>
-        <CustomCard
+        <FeatureCard1
           src="/images/cost-saving.svg"
           heading="100%"
           content="Submission Handling"
         />
-        <CustomCard
+        <FeatureCard1
           src="/images/productivity-inclusive.svg"
           heading="5X"
           content="Underwriting Productivity Increase"
         />
-        <CustomCard
+        <FeatureCard1
           src="/images/reduced-ratio.svg"
           heading="06%"
           content="Reduced Loss Ratio"
@@ -98,7 +99,6 @@ export default function Landing() {
           title={LossInefficienciesContent1.title}
           subtitle={LossInefficienciesContent1.subtitle}
           imageURL="/images/underwriting-inefficiences.png"
-          // imageHeight={}
           imageWidth={"65%"}
           gap={150}
           upperSubTitle="Streamlining Loss Run Extraction"
@@ -117,6 +117,19 @@ export default function Landing() {
           order={order}
           upperSubTitle="Loss Run Analytics"
         />
+      </Box>
+
+      {/* Data Extraction Process Text Banner */}
+      <Box display={"flex"} flexDirection={"column"} gap={3}>
+        <TextBanner
+          order={1}
+          top={2}
+          heading="How it Works?"
+          body="Data Extraction Process"
+        />
+        <Box maxWidth={"87vw"}>
+          <HowItWorks />
+        </Box>
       </Box>
     </Box>
   );

@@ -13,6 +13,7 @@ interface BannerProps {
   imageWidth?: number | string;
   gap?: string | number;
   upperSubTitle?: string;
+  learnMore?: boolean;
 }
 
 export default function Banner({
@@ -26,6 +27,7 @@ export default function Banner({
   imageWidth = "100%",
   gap = 200,
   upperSubTitle = "",
+  learnMore = false,
 }: BannerProps) {
   return (
     <Box
@@ -36,7 +38,7 @@ export default function Banner({
       alignItems={"center"}
       marginTop={2}
       paddingX={order === 1 ? 8 : 0}
-      // border={"2px solid red"}
+      // maxWidth={{ sm: "80vw" }}
     >
       {order === 0 ? (
         <BannerText
@@ -45,6 +47,7 @@ export default function Banner({
           bookADemo={bookADemo}
           contactUs={contactUs}
           upperSubTitle={upperSubTitle}
+          learnMore={learnMore}
         />
       ) : (
         <BannerImage
@@ -70,6 +73,7 @@ export default function Banner({
           bookADemo={bookADemo}
           contactUs={contactUs}
           upperSubTitle={upperSubTitle}
+          learnMore={learnMore}
         />
       )}
     </Box>
@@ -82,6 +86,7 @@ function BannerText({
   bookADemo,
   contactUs,
   upperSubTitle,
+  learnMore,
 }: BannerProps) {
   return (
     <Box
@@ -91,7 +96,6 @@ function BannerText({
       flexDirection={"column"}
       gap={2}
       marginLeft={{ xs: 0, md: 15 }}
-      border={"2px solid green"}
     >
       {upperSubTitle && (
         <Typography variant="h6" textAlign={"center"}>
@@ -105,13 +109,19 @@ function BannerText({
         {subtitle}
       </Typography>
       <Box
-        display={bookADemo || contactUs ? "flex" : "none"}
+        display={bookADemo || contactUs || learnMore ? "flex" : "none"}
         justifyContent={"center"}
         gap={2}
       >
         {bookADemo && (
           <FillButton color="inherit">
             Book A Demo
+            <ArrowRight />
+          </FillButton>
+        )}
+        {learnMore && (
+          <FillButton color="inherit">
+            Learn More
             <ArrowRight />
           </FillButton>
         )}
@@ -144,7 +154,6 @@ function BannerImage({
           marginRight={{ md: 3 }}
           display={"flex"}
           justifyContent={"center"}
-          border={"2px solid blue"}
           marginTop={{ xs: 2, md: 0 }}
         >
           <img
