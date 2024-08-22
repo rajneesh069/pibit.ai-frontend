@@ -1,3 +1,5 @@
+import { FeatureCardType2Props } from "../components/FeatureCardType2";
+
 interface ContentProps {
   title: string;
   subtitle: string;
@@ -55,3 +57,30 @@ export const Delivery: ContentProps = {
   subtitle:
     "Sending this extracted data along with analytics to the carriers either via APIs, Excels, SFTP, Email or any other way as per requirement.",
 };
+
+export const WhatMakesUsUniqueContent: FeatureCardType2Props[] = [
+  {
+    src: "/images/accuracy.svg",
+    alt: "accuracy",
+    heading: "99.9% Accuracy within 2 hrs",
+    body: "Commercial insurance specific AI models along with expert review delivers 100% accurate data within 2hrs",
+  },
+  {
+    src: "/images/accuracy.svg",
+    alt: "Loss run analytics",
+    heading: "Loss run analytics",
+    body: "Quick insights helping underwriters to evaluate risk accurately. Helping Insurers to make informed decisions!",
+  },
+  {
+    src: "/images/accuracy.svg",
+    alt: "Support any format",
+    heading: "Support any format",
+    body: "Understands any carrier, MGA or other loss runs formats across line of business",
+  },
+  {
+    src: "/images/accuracy.svg",
+    alt: "Implement in 2 weeks!",
+    heading: "Implement in 2 weeks!",
+    body: "Flexible document ingestion techniques makes it easy to do rapid deployments with current workflows quickly",
+  },
+];

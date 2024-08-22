@@ -7,10 +7,12 @@ import {
   HeroBannerContent,
   LossInefficienciesContent1,
   LossInefficienciesContent2,
+  WhatMakesUsUniqueContent,
 } from "../data/content";
 import { useEffect, useState } from "react";
 import FeatureCard1 from "./FeatureCardType1.tsx";
 import HowItWorks from "./HowItWorks.tsx";
+import FeatureCardType2 from "./FeatureCardType2.tsx";
 
 export default function Landing() {
   const [order, setOrder] = useState(window.innerWidth < 1024 ? 0 : 1);
@@ -138,6 +140,42 @@ export default function Landing() {
         />
         <Box maxWidth={"87vw"}>
           <HowItWorks />
+        </Box>
+      </Box>
+
+      {/* Our Features Section */}
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        gap={2}
+        justifyContent={"center"}
+        alignItems={"center"}
+        alignContent={"center"}
+        // border={"2px solid red"}
+      >
+        <TextBanner
+          order={1}
+          top={2}
+          heading="What Makes Us Unique"
+          body="Our Features"
+        />
+        <Box
+          display={{ xs: "flex", md: "grid" }}
+          flexDirection={"column"}
+          gap={2}
+          sx={{ gridTemplateRows: "1fr 1fr", gridTemplateColumns: "1fr 1fr" }}
+        >
+          {WhatMakesUsUniqueContent.map((el) => (
+            <Box margin={"1%"}>
+              <FeatureCardType2
+                key={el.alt}
+                alt={el.alt}
+                body={el.body}
+                heading={el.heading}
+                src={el.src}
+              />
+            </Box>
+          ))}
         </Box>
       </Box>
     </Box>

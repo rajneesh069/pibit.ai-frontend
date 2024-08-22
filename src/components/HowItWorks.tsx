@@ -22,6 +22,7 @@ const buttons: string[] = [
 const contentMap: Record<string, React.ReactNode> = {
   Ingestion: (
     <Banner
+      upperSubTitle="Step 1"
       title={Ingestion.title}
       subtitle={Ingestion.subtitle}
       order={0}
@@ -35,6 +36,7 @@ const contentMap: Record<string, React.ReactNode> = {
   ),
   Extraction: (
     <Banner
+      upperSubTitle="Step 2"
       title={Extraction.title}
       subtitle={Extraction.subtitle}
       order={0}
@@ -48,6 +50,7 @@ const contentMap: Record<string, React.ReactNode> = {
   ),
   "Data Verification": (
     <Banner
+      upperSubTitle="Step 3"
       title={DataVerification.title}
       subtitle={DataVerification.subtitle}
       order={0}
@@ -61,6 +64,7 @@ const contentMap: Record<string, React.ReactNode> = {
   ),
   "Data Enrichment": (
     <Banner
+      upperSubTitle="Step 4"
       title={DataEncrichment.title}
       subtitle={DataEncrichment.subtitle}
       order={0}
@@ -74,6 +78,7 @@ const contentMap: Record<string, React.ReactNode> = {
   ),
   Analytics: (
     <Banner
+      upperSubTitle="Step 5"
       title={Analytics.title}
       subtitle={Analytics.subtitle}
       order={0}
@@ -87,6 +92,7 @@ const contentMap: Record<string, React.ReactNode> = {
   ),
   Delivery: (
     <Banner
+      upperSubTitle="Step 6"
       title={Delivery.title}
       subtitle={Delivery.subtitle}
       order={0}
@@ -105,6 +111,7 @@ export default function HowItWorks() {
   const [isMobile, setIsMobile] = useState(
     window.innerWidth < 1024 ? true : false
   );
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setButtonState((prevState) => {
@@ -112,7 +119,7 @@ export default function HowItWorks() {
         const nextIndex = (currentIndex + 1) % buttons.length;
         return buttons[nextIndex];
       });
-    }, 3000);
+    }, 4000);
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024 ? true : false);
     };
@@ -122,6 +129,7 @@ export default function HowItWorks() {
       clearInterval(intervalId);
     };
   }, []);
+
   return (
     <div>
       <Card sx={{ borderRadius: "16px" }}>
@@ -138,15 +146,20 @@ export default function HowItWorks() {
               flexDirection={"column"}
               marginY={"auto"}
               gap={2}
+              flexGrow={0}
+              flexShrink={0}
             >
               {buttons.map((button) => (
                 <Button
-                  onClick={() => setButtonState(button)}
+                  onClick={() => {
+                    setButtonState(button);
+                  }}
                   key={button}
                   variant="outlined"
                   sx={{
                     color: "white",
                     borderColor: "white",
+                    backgroundColor: buttonState === button ? "#808080" : "",
                     "&:hover": {
                       backgroundColor: "#808080",
                       color: "white",
