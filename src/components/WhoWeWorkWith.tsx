@@ -10,7 +10,12 @@ function WhoWeWorkWith() {
         body="Trusted by leading Carriers & MGAs"
         top={0}
       />
-      <Box>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
         <Carousel />
       </Box>
     </Box>

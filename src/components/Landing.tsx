@@ -32,6 +32,8 @@ export default function Landing() {
       flexDirection={"column"}
       gap={3}
       alignItems={"center"}
+      justifyContent={"center"}
+      padding={"auto"}
       marginTop={"64px"}
     >
       {/* Hero Banner */}
@@ -78,7 +80,9 @@ export default function Landing() {
       <Divider />
 
       {/* Who We Work With */}
-      <WhoWeWorkWith />
+      <Box>
+        <WhoWeWorkWith />
+      </Box>
       <Divider />
 
       {/* Text Banner */}
@@ -120,7 +124,12 @@ export default function Landing() {
       </Box>
 
       {/* Data Extraction Process Text Banner */}
-      <Box display={"flex"} flexDirection={"column"} gap={3}>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+        gap={3}
+      >
         <TextBanner
           order={1}
           top={2}

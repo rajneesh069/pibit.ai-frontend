@@ -29,7 +29,7 @@ const contentMap: Record<string, React.ReactNode> = {
       bookADemo={false}
       learnMore={true}
       contactUs={false}
-      imageWidth={200}
+      imageWidth={"60%"}
       gap={0}
     />
   ),
@@ -42,7 +42,7 @@ const contentMap: Record<string, React.ReactNode> = {
       bookADemo={false}
       learnMore={true}
       contactUs={false}
-      imageWidth={200}
+      imageWidth={"60%"}
       gap={0}
     />
   ),
@@ -55,7 +55,7 @@ const contentMap: Record<string, React.ReactNode> = {
       bookADemo={false}
       learnMore={true}
       contactUs={false}
-      imageWidth={200}
+      imageWidth={"60%"}
       gap={0}
     />
   ),
@@ -68,7 +68,7 @@ const contentMap: Record<string, React.ReactNode> = {
       bookADemo={false}
       learnMore={true}
       contactUs={false}
-      imageWidth={200}
+      imageWidth={"60%"}
       gap={0}
     />
   ),
@@ -81,7 +81,7 @@ const contentMap: Record<string, React.ReactNode> = {
       bookADemo={false}
       learnMore={true}
       contactUs={false}
-      imageWidth={200}
+      imageWidth={"60%"}
       gap={0}
     />
   ),
@@ -94,7 +94,7 @@ const contentMap: Record<string, React.ReactNode> = {
       bookADemo={false}
       learnMore={true}
       contactUs={false}
-      // imageWidth={400}
+      imageWidth={"60%"}
       gap={0}
     />
   ),
