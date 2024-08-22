@@ -15,6 +15,7 @@ import FeatureCard1 from "./FeatureCardType1.tsx";
 import HowItWorks from "./HowItWorks.tsx";
 import FeatureCardType2 from "./FeatureCardType2.tsx";
 import CustomerReviews from "./CustomerReviews.tsx";
+import InvestorCard from "./InvestorCard.tsx";
 
 export default function Landing() {
   const [order, setOrder] = useState(window.innerWidth < 1024 ? 0 : 1);
@@ -198,6 +199,11 @@ export default function Landing() {
       {/* What Our Customers Say */}
       <Box>
         <CustomerReviews />
+      </Box>
+
+      {/* Our Investors */}
+      <Box marginTop={8}>
+        <InvestorCard />
       </Box>
     </Box>
   );

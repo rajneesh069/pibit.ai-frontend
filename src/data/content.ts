@@ -115,3 +115,8 @@ export const customerReviews: CustomerProps[] = [
     customerWorkPlace: "Method Workers' Comp",
   },
 ];
+
+export const investorImageURLs: { src: string; alt: string }[] = [
+  { src: "/images/y-combinator-logo.png", alt: "y-combinator-logo" },
+  { src: "/images/arali-logo.png", alt: "arali-logo" },
+];
