@@ -5,6 +5,15 @@ interface ContentProps {
   subtitle: string;
 }
 
+interface CustomerProps {
+  title: string;
+  review: string;
+  customerName: string;
+  customerImage?: string;
+  customerDescription: string;
+  customerWorkPlace: string;
+}
+
 /* Hero Banner Data */
 export const HeroBannerContent: ContentProps = {
   title: "Faster, Accurate Loss Run Analysis",
@@ -94,3 +103,15 @@ export const technology: ContentProps = {
   subtitle:
     "Our cutting-edge approach integrates Artificial Intelligence, Machine Learning, Computer Vision, NLP, and LLMs, providing unmatched precision in extracting data from complex submissions, propelling Commercial Insurance into a new era of efficiency.",
 };
+
+export const customerReviews: CustomerProps[] = [
+  {
+    title: "Significantly improved our efficiency",
+    review:
+      "After bringing in Pibit.ai loss run analysis product to our submission and underwriting process, we saw a positive shift. As our employees moved up the career path from Underwriting Assistants to Underwriters, we did not have to backfill all roles as this replaced manual data entry. Our operations are now faster, impacting quote generation speed positively. We have now achieved a data accuracy of 99.9%, ensuring consistently improved risk analysis, with an average turnaround time of submission to reviewable underwriting file in the underwriter’s queue under 2 hours. Pibit.ai has truly streamlined our submission workflow!",
+    customerImage: "/images/Michaela_Morrison.png",
+    customerName: "Michaela Morrison",
+    customerDescription: "SVP Operations",
+    customerWorkPlace: "Method Workers' Comp",
+  },
+];

@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import FeatureCard1 from "./FeatureCardType1.tsx";
 import HowItWorks from "./HowItWorks.tsx";
 import FeatureCardType2 from "./FeatureCardType2.tsx";
+import CustomerReviews from "./CustomerReviews.tsx";
 
 export default function Landing() {
   const [order, setOrder] = useState(window.innerWidth < 1024 ? 0 : 1);
@@ -192,6 +193,11 @@ export default function Landing() {
           title={technology.title}
           upperSubTitle="AI-powered, 100% Accuracy!"
         />
+      </Box>
+
+      {/* What Our Customers Say */}
+      <Box>
+        <CustomerReviews />
       </Box>
     </Box>
   );
