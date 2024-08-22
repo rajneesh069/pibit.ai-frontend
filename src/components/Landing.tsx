@@ -16,6 +16,8 @@ import HowItWorks from "./HowItWorks.tsx";
 import FeatureCardType2 from "./FeatureCardType2.tsx";
 import CustomerReviews from "./CustomerReviews.tsx";
 import InvestorCard from "./InvestorCard.tsx";
+import { FillButton } from "./TopBar.tsx";
+import { ArrowRight } from "@mui/icons-material";
 
 export default function Landing() {
   const [order, setOrder] = useState(window.innerWidth < 1024 ? 0 : 1);
@@ -37,7 +39,6 @@ export default function Landing() {
       flexDirection={"column"}
       gap={3}
       alignItems={"center"}
-      border={"2px solid white"}
       justifyContent={"center"}
       marginTop={"64px"}
     >
@@ -204,6 +205,27 @@ export default function Landing() {
       {/* Our Investors */}
       <Box marginTop={8}>
         <InvestorCard />
+      </Box>
+
+      {/* Last Text Banner */}
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        width={{ xs: 300, md: 650 }}
+        gap={2}
+      >
+        <TextBanner
+          heading="Empower Your Underwriters with Loss Run Insights!"
+          body="See it Live!"
+          top={5}
+          order={1}
+        />
+        <Box alignSelf={"center"}>
+          <FillButton sx={{ width: 150 }}>
+            Book A Demo <ArrowRight />
+          </FillButton>
+        </Box>
       </Box>
     </Box>
   );

@@ -3,6 +3,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./components/Landing";
+import Footer from "./components/Footer";
 
 const darkTheme = createTheme({
   palette: {
@@ -20,6 +21,7 @@ function App() {
           <Route path={"/"} element={<Landing />} />
         </Routes>
       </BrowserRouter>
+      <Footer/>
     </ThemeProvider>
   );
 }

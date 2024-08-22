@@ -77,7 +77,7 @@ export default function TopBar(props: Props) {
           my: 2,
         }}
       >
-        <img src="/images/pitbitai.png" alt="logo" height={50} width={150} />
+        <img src="/images/pibitai.png" alt="logo" height={50} width={150} />
       </Box>
       <Divider />
       <List>
@@ -128,7 +128,7 @@ export default function TopBar(props: Props) {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <img
               style={{ cursor: "pointer" }}
-              src="/images/pitbitai.png"
+              src="/images/pibitai.png"
               alt="logo"
               height={50}
               width={150}

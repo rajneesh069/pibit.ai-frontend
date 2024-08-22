@@ -120,3 +120,12 @@ export const investorImageURLs: { src: string; alt: string }[] = [
   { src: "/images/y-combinator-logo.png", alt: "y-combinator-logo" },
   { src: "/images/arali-logo.png", alt: "arali-logo" },
 ];
+
+export const addresses: { country: string; address: string }[] = [
+  { country: "USA", address: "16192 Coastal Highway, Lewes, DE 19958" },
+  {
+    country: "India",
+    address:
+      "2nd Floor, M-840, Mayfield Gardens, Sector 51, Gurugram Haryana - 122018",
+  },
+];

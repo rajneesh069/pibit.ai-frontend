@@ -37,7 +37,6 @@ export default function Banner({
       alignContent={"center"}
       alignItems={"center"}
       marginTop={2}
-      // paddingX={order === 1 ? 8 : 0}
     >
       {order === 0 ? (
         <BannerText
@@ -48,6 +47,8 @@ export default function Banner({
           upperSubTitle={upperSubTitle}
           learnMore={learnMore}
         />
+      ) : imageURL === "" ? (
+        ""
       ) : (
         <BannerImage
           imageHeight={imageHeight}
@@ -60,11 +61,15 @@ export default function Banner({
         sx={{ sm: { display: "none" }, md: { display: "block" } }}
       />
       {order === 0 ? (
-        <BannerImage
-          imageHeight={imageHeight}
-          imageWidth={imageWidth}
-          imageURL={imageURL}
-        />
+        imageURL === "" ? (
+          ""
+        ) : (
+          <BannerImage
+            imageHeight={imageHeight}
+            imageWidth={imageWidth}
+            imageURL={imageURL}
+          />
+        )
       ) : (
         <BannerText
           title={title}
