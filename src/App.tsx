@@ -21,7 +21,7 @@ function App() {
           <Route path={"/"} element={<Landing />} />
         </Routes>
       </BrowserRouter>
-      <Footer/>
+      <Footer />
     </ThemeProvider>
   );
 }
