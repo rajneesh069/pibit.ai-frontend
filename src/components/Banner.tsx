@@ -119,11 +119,11 @@ function BannerText({
       marginLeft={{ xs: 0, md: 15 }}
     >
       {upperSubTitle && (
-        <Typography variant="h6" textAlign={"center"}>
+        <Typography variant="subtitle2" textAlign={"center"}>
           {upperSubTitle}
         </Typography>
       )}
-      <Typography variant="h3" textAlign={"center"}>
+      <Typography variant="h4" textAlign={"center"}>
         {title}
       </Typography>
       <Typography variant="subtitle1" textAlign={"center"}>

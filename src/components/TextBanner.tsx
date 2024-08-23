@@ -10,10 +10,10 @@ interface TextBannerProps {
 function TextBanner({ heading, body, top = 0, order = 0 }: TextBannerProps) {
   return (
     <Box display={"flex"} flexDirection={"column"} gap={1} marginTop={top}>
-      <Typography variant={order === 0 ? "h2" : "h6"} textAlign={"center"}>
+      <Typography variant={order === 0 ? "h4" : "h6"} textAlign={"center"}>
         {order === 0 ? heading : body}
       </Typography>
-      <Typography textAlign={"center"} variant={order === 0 ? "h6" : "h3"}>
+      <Typography textAlign={"center"} variant={order === 0 ? "h6" : "h4"}>
         {order === 0 ? body : heading}
       </Typography>
     </Box>
