@@ -9,7 +9,7 @@ interface TextBannerProps {
 
 function TextBanner({ heading, body, top = 0, order = 0 }: TextBannerProps) {
   return (
-    <Box display={"flex"} flexDirection={"column"} gap={1} marginTop={top}>
+    <Box display={"flex"} flexDirection={"column"} gap={0.5} marginTop={top}>
       <Typography variant={order === 0 ? "h4" : "h6"} textAlign={"center"}>
         {order === 0 ? heading : body}
       </Typography>

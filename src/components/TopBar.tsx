@@ -13,8 +13,21 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { FillButton } from "./FillButton";
-import { Typography } from "@mui/material";
+import { Modal, Typography } from "@mui/material";
 import { ArrowRight } from "@mui/icons-material";
+import ContactForm from "./ContactForm";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: { xs: 300, sm: 650 },
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  borderRadius: "16px",
+};
 
 interface Props {
   window?: () => Window;
@@ -32,6 +45,10 @@ export default function TopBar(props: Props) {
     Blogs: "#808080",
     "About Us": "#808080",
   });
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -75,8 +92,8 @@ export default function TopBar(props: Props) {
           top: 0,
           minWidth: "100%",
           zIndex: 10,
-          backgroundColor: "rgba(18, 18, 18, 0.95)",
-          backdropFilter: "blur(10px)",
+          backgroundColor: "rgba(10, 10, 10, 0.85)",
+          backdropFilter: "blur(8px)",
         }}
       >
         <Toolbar
@@ -133,10 +150,23 @@ export default function TopBar(props: Props) {
             ))}
           </Box>
           <Box>
-            <FillButton color="inherit">
+            <FillButton color="inherit" onClick={handleOpen}>
               Book A Demo
               <ArrowRight />
             </FillButton>
+
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="Book-a-demo-form"
+              BackdropProps={{
+                onClick: (event) => event.stopPropagation(),
+              }}
+            >
+              <Box sx={style}>
+                <ContactForm handleClose={handleClose} />
+              </Box>
+            </Modal>
           </Box>
         </Toolbar>
       </AppBar>
