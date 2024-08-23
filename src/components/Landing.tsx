@@ -227,6 +227,15 @@ export default function Landing() {
           </FillButton>
         </Box>
       </Box>
+      {/* Footer Divider */}
+      <Divider
+        sx={{
+          backgroundColor: "#808080",
+          height: "0.25px",
+          width: "100%",
+          marginBottom: 2,
+        }}
+      />
     </Box>
   );
 }

@@ -6,10 +6,11 @@ export default function Footer() {
     <Box
       display={"flex"}
       flexDirection={{ xs: "column", md: "row" }}
+      justifyContent={{ md: "center" }}
+      alignItems={"center"}
       height={220}
-      gap={{ md: 25 }}
+      gap={{ xs: 3, md: 25 }}
       marginTop={5}
-      marginBottom={5}
     >
       {/* Logo and Email */}
       <Box
@@ -32,19 +33,13 @@ export default function Footer() {
 
       {/* Links and Support */}
       <Box
-        display={"flex"}
-        flexDirection={{ xs: "row", md: "column" }}
+        display={{ xs: "flex", md: "grid" }}
+        gridTemplateColumns={"1fr 1fr"}
+        flexDirection={{ xs: "row" }}
         gap={{ xs: 10, md: 2 }}
         justifyContent={"center"}
-        flexWrap={"wrap"}
       >
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          justifyContent={"flex-end"}
-          alignItems={"flex-start"}
-          gap={{ md: 0.5 }}
-        >
+        <Box display={"flex"} flexDirection={"column"} gap={{ md: 0.5 }}>
           <Typography fontWeight={600} fontFamily={"cursive"}>
             Links
           </Typography>
@@ -69,9 +64,11 @@ export default function Footer() {
       <Box
         display={"flex"}
         flexDirection={{ xs: "row", md: "column" }}
-        gap={{ xs: 10, md: 1 }}
+        alignContent={"center"}
+        justifyContent={"center"}
+        gap={{ xs: 5, md: 1 }}
         width={300}
-        marginY={"auto"}
+        padding={3}
       >
         {addresses.map((el) => (
           <Stack>
