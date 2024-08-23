@@ -28,8 +28,9 @@ export default function CustomerReviews() {
       alignItems={"center"}
       justifyContent={"center"}
     >
-      {customerReviews.map((review) => (
+      {customerReviews.map((review, idx) => (
         <Card
+          key={idx}
           sx={{
             maxWidth: isMobile ? "300px" : "80vw",
             borderRadius: "16px",

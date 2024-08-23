@@ -40,6 +40,7 @@ export default function InvestorCard() {
         >
           {investorImageURLs.map(({ src, alt }) => (
             <img
+              key={src}
               src={src}
               alt={alt}
               width={250}

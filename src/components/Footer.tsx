@@ -72,7 +72,7 @@ export default function Footer() {
           padding={3}
         >
           {addresses.map((el) => (
-            <Stack>
+            <Stack key={el.address}>
               <Typography fontWeight={600} fontFamily={"sans-serif"}>
                 {el.country}
               </Typography>

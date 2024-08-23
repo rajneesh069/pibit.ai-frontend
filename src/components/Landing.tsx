@@ -16,7 +16,7 @@ import HowItWorks from "./HowItWorks.tsx";
 import FeatureCardType2 from "./FeatureCardType2.tsx";
 import CustomerReviews from "./CustomerReviews.tsx";
 import InvestorCard from "./InvestorCard.tsx";
-import { FillButton } from "./TopBar.tsx";
+import { FillButton } from "./FillButton.tsx";
 import { ArrowRight } from "@mui/icons-material";
 
 export default function Landing() {
@@ -169,8 +169,8 @@ export default function Landing() {
           gap={2}
           sx={{ gridTemplateRows: "1fr 1fr", gridTemplateColumns: "1fr 1fr" }}
         >
-          {WhatMakesUsUniqueContent.map((el) => (
-            <Box>
+          {WhatMakesUsUniqueContent.map((el, idx) => (
+            <Box key={idx}>
               <FeatureCardType2
                 key={el.alt}
                 alt={el.alt}

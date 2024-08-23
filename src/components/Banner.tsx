@@ -1,6 +1,19 @@
-import { Box, Button, Typography } from "@mui/material";
-import { FillButton } from "./TopBar";
+import { Box, Button, Modal, Typography } from "@mui/material";
 import { ArrowRight } from "@mui/icons-material";
+import { FillButton } from "./FillButton";
+import { useState } from "react";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 interface BannerProps {
   title: string;
@@ -92,6 +105,10 @@ function BannerText({
   upperSubTitle,
   learnMore,
 }: BannerProps) {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Box
       flexBasis={{ xs: "350px", md: "400px" }}
@@ -118,10 +135,29 @@ function BannerText({
         gap={2}
       >
         {bookADemo && (
-          <FillButton color="inherit">
-            Book A Demo
-            <ArrowRight />
-          </FillButton>
+          <Box>
+            <FillButton color="inherit" onClick={handleOpen}>
+              Book A Demo
+              <ArrowRight />
+            </FillButton>
+
+            {/* Modal */}
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="Book-a-demo-form"
+            >
+              <Box sx={style}>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Text in a modal
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  Duis mollis, est non commodo luctus, nisi erat porttitor
+                  ligula.
+                </Typography>
+              </Box>
+            </Modal>
+          </Box>
         )}
         {learnMore && (
           <FillButton color="inherit">
